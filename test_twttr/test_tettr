@@ -1,0 +1,25 @@
+
+
+from twttr import shorten
+
+def test_twttr_lower():
+    assert shorten("twitter") == "twttr"
+
+
+def test_twttr_upper():
+    assert shorten("Twitter") == "Twttr"
+
+def test_lower_vowels():
+    assert shorten("aeiou") == ""
+
+def test_upper_consonant():
+    assert shorten("B") == "B"
+
+def test_number():
+    assert shorten("0") == "0"
+
+def test_punctuation():
+    assert shorten(".") == "."
+
+def test_shorten():
+    assert shorten("aeiouAEIOU0.bB") == "0.bB"
